@@ -27,7 +27,7 @@ An e-commerce platform designed to help local artisans showcase and sell their h
 
 * React.js
 * Vite
-* JavaScript / CSS
+* JavaScript / TailwindCSS
 
 ---
 
@@ -73,18 +73,6 @@ npm run dev
 
 ---
 
-## 🔐 Environment Variables
-
-Create a `.env` file in your backend folder and add:
-
-```
-DEBUG=True
-SECRET_KEY=your_secret_key
-DATABASE_URL=your_database_url
-```
-
----
-
 ## 📸 Screenshots
 
 *(Add screenshots of your app here to make it more attractive)*
@@ -106,9 +94,9 @@ This project is licensed under the MIT License.
 
 ## 👨‍💻 Author
 
-**Your Name**
+**Faridi Nayunda**
 
-* GitHub: https://github.com/yourusername
+* GitHub: https://github.com/faridi-nayunda
 
 ---
 
