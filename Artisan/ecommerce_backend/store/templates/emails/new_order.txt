@@ -1,0 +1,14 @@
+Hello {{ seller.username }},
+
+You have received a new order (#{{ order.id }}) with the following details:
+
+Customer: {{ order.user.username }}
+Total Amount: ${{ order.total_price }}
+Order Date: {{ order.created_at|date:"F j, Y" }}
+
+Items:
+{% for item in order.items.all %}
+- {{ item.quantity }} × {{ item.product.name }} @ ${{ item.price }}
+{% endfor %}
+
+View the order: {{ site_url }}/orders/user-orders/{{ order.id }}

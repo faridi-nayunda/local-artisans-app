@@ -1,0 +1,49 @@
+# =========================
+# Environment Variables
+# =========================
+.env
+.env.local
+.env.*.local
+
+# =========================
+# Django / Python (Pipenv)
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Pipenv virtual environment
+.venv/
+pipenv/
+
+# Django specific
+*.log
+db.sqlite3
+media/
+
+# =========================
+# React / Node
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build folders
+build/
+dist/
+.next/
+
+# =========================
+# IDE & OS files
+# =========================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# =========================
+# Misc
+# =========================
+coverage/
+*.swp

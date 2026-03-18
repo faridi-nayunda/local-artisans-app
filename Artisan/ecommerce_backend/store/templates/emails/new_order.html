@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>New Order Notification</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f9f9f9;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="padding: 20px;">
+    <tr>
+      <td align="center">
+        <table width="100%" max-width="600px" style="background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+          <tr>
+            <td style="text-align: center;">
+              <h2 style="color: #333333;">📦 New Order Notification</h2>
+              <p style="font-size: 16px; color: #444;">Hello <strong>{{ seller.username }}</strong>,</p>
+              <p style="font-size: 16px; color: #444;">You've received a new order with the following details:</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding-top: 20px;">
+              <h3 style="color: #4f46e5; margin-bottom: 10px;">Order #{{ order.id }}</h3>
+              <p style="margin: 4px 0;"><strong>Customer:</strong> {{ order.user.username }}</p>
+              <p style="margin: 4px 0;"><strong>Total:</strong> Tzs.{{ order.total_price }}</p>
+              <p style="margin: 4px 0;"><strong>Date:</strong> {{ order.created_at|date:"F j, Y" }}</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding-top: 20px;">
+              <h4 style="color: #333;">Items Ordered:</h4>
+              <ul style="padding-left: 20px; font-size: 15px; color: #555;">
+                {% for item in order.items.all %}
+                  <li>{{ item.quantity }} × {{ item.product.name }} @ Tzs.{{ item.price }}</li>
+                {% endfor %}
+              </ul>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding-top: 30px; text-align: center;">
+              <a href="{{ site_url }}/seller/order/new{{ order.id }}"
+                 style="background-color: #4f46e5; color: #fff; padding: 12px 24px; border-radius: 5px; text-decoration: none; display: inline-block; font-size: 16px;">
+                View Order
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding-top: 40px; text-align: center; font-size: 12px; color: #888;">
+              &copy; {{ current_year }} Handify. All rights reserved.
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Order Status Update</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f7f7f7; padding: 20px;">
+
+  <table width="100%" style="max-width: 600px; margin: auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
+    <tr style="background-color: #2563eb; color: #ffffff;">
+      <td style="padding: 20px; text-align: center;">
+        <h2>Order #{{ order.id }} Status Update</h2>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding: 20px;">
+        <p>Hello {{ order.user.username }},</p>
+
+        <p>Your order <strong>#{{ order.id }}</strong> has been updated to the following status:</p>
+
+        <div style="margin: 20px 0; padding: 15px; background-color: #e0f2fe; border-left: 5px solid #2563eb;">
+          <strong>Status:</strong> {{ status_display }}
+        </div>
+
+        <p><strong>Seller:</strong> {{ seller_name }}</p>
+
+        <p>If you have any questions or need support, feel free to contact the seller or our support team.</p>
+
+        <p style="margin-top: 30px;">Thank you for using <strong>Handify</strong>.</p>
+      </td>
+    </tr>
+
+    <tr style="background-color: #f1f5f9; text-align: center;">
+      <td style="padding: 15px; font-size: 12px; color: #6b7280;">
+        &copy; {{ current_year }} Handify. All rights reserved.
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
